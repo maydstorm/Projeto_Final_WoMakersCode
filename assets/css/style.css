@@ -1,0 +1,298 @@
+body {
+  background: rgb(0, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(1, 2, 24, 1) 50%
+  );
+  font-family: 'Poppins', sans-serif;
+  --cor-destaque: #800080;
+}
+
+.caixa {
+  position: relative;
+  width: 540px;
+  margin: 0 auto;
+}
+
+.caixa_img {
+  width: 90%;
+}
+
+header {
+  text-align: center;
+  padding: 8px;
+  box-sizing: border-box;
+  margin: 10px auto;
+  font-style: italic;
+}
+
+.caixa_descricao {
+  font-family: 'Courier Prime', sans-serif;
+  color: white;
+  font-size: 35px;
+  border-right: 1px solid #030303;
+  padding-right: 3px;
+  max-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blinking steps(10) normal 0.8s, typing normal steps(25) 4s both;
+}
+
+@keyframes blinking {
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes typing {
+  100% {
+    max-width: 100%;
+  }
+}
+
+.section {
+  width: 940px;
+  border-radius: 5px;
+  color: black;
+  margin: 0 1% 0 8%;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.perfil_descricao {
+  background-color: #b4abab;
+  font-weight: 700;
+  padding: 8px;
+  margin: 16px 5px;
+  border-radius: 5px;
+}
+
+h2 {
+  color: var(--cor-destaque);
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  background: var(--cor-destaque);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.mandona {
+  display: flex;
+}
+
+section.sessao2 {
+  margin-right: 8%;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  transition-property: transform, opacity, filter;
+  transition-duration: 600ms, 600ms, 600ms;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+#slider {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 40vw;
+  height: 40vh;
+  background: transparent;
+  margin-top: 35px;
+  border-radius: 5px;
+}
+
+#status {
+  position: absolute;
+  bottom: 10px;
+  left: 38.5%;
+  display: flex;
+}
+
+#stat {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 11;
+  margin: 0px 5px;
+  border: 2px solid var(--cor-destaque);
+  cursor: pointer;
+}
+
+#stat:hover {
+  color: var(--cor-destaque);
+  opacity: 0.3;
+  background-color: var(--cor-destaque);
+}
+
+#stat[data-active] {
+  background: var(--cor-destaque);
+}
+
+img {
+  object-fit: cover;
+  object-position: center 80%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
+}
+
+#image {
+  width: 100%;
+  margin-right: -100%;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+#image[data-active] {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#image[data-active] img {
+  transform: scale(1.1);
+}
+
+#image[data-active] ~ #image {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+svg {
+  z-index: 1000;
+  top: 50%;
+  margin-top: -30px;
+  height: 60px;
+  position: absolute;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+path {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 3px;
+}
+
+#next {
+  right: 10px;
+  display: none;
+}
+
+#previous {
+  left: 10px;
+  transform: rotate(180deg);
+  display: none;
+}
+
+@media (max-width: 680px) {
+  header {
+    width: fit-content;
+  }
+
+  .caixa_img {
+    width: 100%;
+  }
+
+  .mandona {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 145%;
+  }
+
+  #slider {
+    width: 266%;
+    height: auto;
+  }
+
+  section.sessao2 {
+    margin-right: 8%;
+    margin-left: 5%;
+  }
+
+  .section {
+    width: 240%;
+    margin: 0 1% 0 1%;
+  }
+  #status {
+    left: 43.5%;
+  }
+
+  #stat {
+    width: 25px;
+    height: 25px;
+  }
+
+  footer {
+    width: 350%;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 1024px) {
+  header {
+    width: auto;
+  }
+
+  .caixa_descricao {
+    font-size: 20px;
+  }
+
+  .caixa_img {
+    width: 100%;
+  }
+
+  .mandona {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 41%;
+  }
+
+  #slider {
+    width: 266%;
+    height: auto;
+  }
+
+  section.sessao2 {
+    margin-right: 7%;
+    margin-left: 5%;
+  }
+
+  .section {
+    width: 240%;
+    margin: 0 1% 0 2%;
+    padding: 9px;
+  }
+  #status {
+    left: 43.5%;
+  }
+
+  #stat {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 3000px) {
+  #slider {
+    height: 55vh;
+  }
+
+  #status {
+    left: 40%;
+  }
+}
