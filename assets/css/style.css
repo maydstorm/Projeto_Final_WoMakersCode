@@ -57,12 +57,12 @@ header {
   color: black;
   margin: 0 1% 0 8%;
   padding: 20px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .perfil_descricao {
   background-color: #b4abab;
-  font-weight: 700;
+  font-weight: 500;
   padding: 8px;
   margin: 16px 5px;
   border-radius: 5px;
